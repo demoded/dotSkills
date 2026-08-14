@@ -1,7 +1,7 @@
 # dotSkills
 random set of skills for your clankers
 
-### 🤖 Last.fm Weekly Roast Review 🎸🥁
+### [lastfm-weekly-roast] 🤖 Last.fm Weekly Roast Review 🎸🥁
 
 **Turn your weekly music listening data into comedy, cosmic wonder, and ruthless conservatory terror.**
 An agent skill that queries the Last.fm API for a user's 10 most played albums over the last 7 days (or custom timeframes) and runs them through three distinct AI music critics:
