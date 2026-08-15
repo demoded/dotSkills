@@ -3,6 +3,8 @@ random set of skills for your clankers
 
 ### [lastfm-weekly-roast] 🤖 Last.fm Weekly Roast Review 🎸🥁
 
+![LastFm tweets](./assets/lastfm-weekly-roast.png)
+
 **Turn your weekly music listening data into comedy, cosmic wonder, and ruthless conservatory terror.**
 An agent skill that queries the Last.fm API for a user's 10 most played albums over the last 7 days (or custom timeframes) and runs them through three distinct AI music critics:
 
