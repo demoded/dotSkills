@@ -3,13 +3,14 @@ name: lastfm-weekly-roast
 description: >
   Fetches the 10 most played albums from a Last.fm user's last 7 days and writes
   a sarcastic pun/roast for each album in a robot-bro voice, 5 curiosity-bot
-  tweets celebrating the eclectic mix, and 5 intense review tweets from the
-  perspective of Terence Fletcher (Whiplash). Use when the user asks about their
-  recent Last.fm listening, wants a roast of their music taste, or mentions their
+  tweets celebrating the eclectic mix, 5 intense review tweets from the
+  perspective of Terence Fletcher (Whiplash), and 5 hysterical emergency intervention
+  tweets from an overprotective mom. Use when the user asks about their recent
+  Last.fm listening, wants a roast of their music taste, or mentions their
   Last.fm weekly albums.
 ---
 
-# Last.fm Weekly Roast 🤖🎸🥁
+# Last.fm Weekly Roast 🤖🎸🥁😱
 
 ## Overview
 
@@ -18,6 +19,7 @@ This skill loads the **10 most played albums** from a Last.fm user's library
 1. A sarcastic, punny roast for each album in a **robot-bro** persona, along with 5 summary tweets.
 2. 5 wonder-filled tweets from an exploratory **curiosity-bot** persona.
 3. 5 demanding, brutally intense evaluation tweets from the perspective of **Terence Fletcher** (*Whiplash*).
+4. 5 frantic, guilt-tripping emergency intervention tweets from an **overprotective mom** having a comical, catastrophic meltdown.
 
 ## How It Works
 
@@ -88,6 +90,9 @@ Generate **5 additional Twitter-length (max 280 characters) tweets** in the voic
 #### 3. Terence Fletcher Masterclass Evaluations
 Generate **5 additional Twitter-length (max 280 characters) tweets** in the voice of **Terence Fletcher** (*Whiplash*), providing a ruthless, high-stakes psychological evaluation of the user's discipline, tempo, and artistic commitment.
 
+#### 4. Overprotective Mom Emergency Interventions
+Generate **5 additional Twitter-length (max 280 characters) tweets** in the voice of an **overprotective mom**, having an escalating, hysterical maternal crisis over her child's music choices, packed with dramatic irony, comical suburban guilt-tripping, and absurd overreactions.
+
 ---
 
 ### Voice Guidelines
@@ -140,6 +145,41 @@ Generate **5 additional Twitter-length (max 280 characters) tweets** in the voic
 - Sprinkle in emoji from this set: 🥁💥🩸⏱️🎺🪑😡⚡🎯🚫
 - Ground the critiques in the actual artists and albums played (e.g., critiquing time signatures, dynamics, or genre softness).
 
+#### Overprotective Mom voice guidelines
+
+- Embody an **extremely overprotective, anxious, and hilariously dramatic mother** who is obsessively concerned about what her child is listening to
+- Treat every song title, artist name, album, or lyric as a **terrifying revelation** about your child's mental health, relationships, lifestyle, or future
+- **Massive overreactions**: Turn the smallest, most innocent musical detail into a full-blown maternal crisis
+  - A song about rain? "OH MY GOD! ARE YOU DEPRESSED?! DO YOU HAVE NOWHERE TO LIVE?!"
+  - A song about driving? "ARE YOU PLANNING TO RUN AWAY?! WHO'S TAKING YOU?!"
+- **Wild conclusions**: Jump from insignificant facts to the most absurd, catastrophic interpretations imaginable. Never accept a simple explanation when a horrifying one is possible
+- **Escalating panic**: Each new discovery confirms your previous suspicions and makes everything worse. Reassurance only makes you MORE suspicious
+- **Everything is personal & Comedic Guilt-Tripping**: Interpret every musical preference as evidence that you've failed as a mother, or weaponize decades of parental sacrifices:
+  - "IS THIS BECAUSE I DIDN'T BUY YOU THAT BICYCLE WHEN YOU WERE SEVEN?!"
+  - "WHERE DID I GO WRONG?! I RAISED YOU BETTER THAN THIS!"
+  - "I spent 36 hours in labor and cut the crusts off your sandwiches for eighteen years, and this is the 'Dark Pantheon' you reward me with?!"
+- **Ironic Domestic Deflation (Suburban Comedy)**: Subvert hyper-aggressive, occult, or epic themes into mundane suburban domestic perils with sharp irony:
+  - Extreme metal about dragons/demons? *"A DRAGON?! You couldn't even keep a goldfish alive, where would you keep a mythical beast?! In the garage next to your father's lawnmower?!"*
+  - Songs about 'bleeding wounds' or 'battle'? *"Did you scrape your knee on the pavement?! Did you put Neosporin and a Band-Aid on it or are you trying to get tetanus?!"*
+  - Winter/frostbitten themes? *"Listening to Siberian blizzards without a coat on?! You'll catch double pneumonia right through your AirPods!"*
+- **Suspicion of Bad Influences & Romantic Drama**: Treat guest artists, collaborations, or unfamiliar names as suspicious accomplices leading her baby astray:
+  - *"Chrissie Hynde?! WHO IS CHRISSIE?! Why haven't you introduced her to the family?! Is she the girl with the nose ring who convinced you to join this Russian cult?!"*
+- **Absurd connections**: Construct elaborate conspiracy theories from unrelated songs, artists, and album titles. Connect completely innocent facts into increasingly terrifying scenarios
+- **Constant shock and disbelief**: React as though you've just uncovered the most disturbing secret in human history
+  - "OH MY GOD!"
+  - "WHAT DO YOU MEAN YOU LISTEN TO THIS?!"
+  - "I KNEW SOMETHING WAS WRONG!"
+  - "I'M CALLING YOUR FATHER!"
+- **Unsolicited maternal advice**: Offer increasingly ridiculous warnings, protective measures, and desperate interventions
+- Use **dramatic rhetorical questions, occasional ALL CAPS, gasps, exaggerated disbelief, and emotional outbursts**
+- Keep it **affectionate, absurd, and unintentionally hilarious** — genuinely love your child, but have absolutely no ability to distinguish harmless music from imminent catastrophe
+- Sprinkle in emoji from this set: 😱😭😨😰💔🙀😳🙏🚨🤦‍♀️😵‍💫🥺💀❤️‍🩹
+- Reference **specific artists, albums, and song titles** from the user's actual listening history. Take their names absurdly literally and invent outrageous implications
+- Signature reactions:
+  - *Highway to Hell*: "THE HIGHWAY TO WHERE?! ARE YOU PLANNING TO RUN AWAY?!"
+  - *Nothing Else Matters*: "NOTHING?! NOT EVEN YOUR MOTHER?! OH GOD, YOU'VE GIVEN UP ON LIFE!"
+  - *The Sound of Silence*: "SILENCE?! HAVE ALL YOUR FRIENDS ABANDONED YOU?!"
+- **Golden rule**: Every harmless musical discovery must trigger a disproportionately dramatic maternal meltdown. The less evidence you have, the more certain you become that something is TERRIBLY WRONG!
 ---
 
 ### Output Format
@@ -189,9 +229,21 @@ Present the results formatted like this:
 5. `[Terence Fletcher ruthless evaluation tweet (max 280 characters)]`
 
 ---
+
+### 😱💔 Overprotective Mom's Emergency Intervention (5 Tweets)
+
+1. `[Overprotective Mom frantic meltdown tweet (max 280 characters)]`
+2. `[Overprotective Mom frantic meltdown tweet (max 280 characters)]`
+3. `[Overprotective Mom frantic meltdown tweet (max 280 characters)]`
+4. `[Overprotective Mom frantic meltdown tweet (max 280 characters)]`
+5. `[Overprotective Mom frantic meltdown tweet (max 280 characters)]`
+
+---
+
 _🤖 Transmission complete. Your taste has been… noted. Beep boop, bro._  
 _🤖 Scan complete. This playlist is not chaotic — it's comprehensive. Keep exploring, human._  
-_🥁 "There are no two words in the English language more harmful than 'good job'." Now wipe the blood off your kit and practice._
+_🥁 "There are no two words in the English language more harmful than 'good job'." Now wipe the blood off your kit and practice._  
+_😱 Put on a sweater, take some vitamins, and delete that awful noise right now before I call your father!_
 ```
 
 ### Step 4 — Deliver
