@@ -10,7 +10,7 @@ description: >
   Last.fm weekly albums.
 ---
 
-# Last.fm Weekly Roast 🤖🎸🥁😱
+# [Last.fm Weekly Roast](https://github.com/demoded/dotSkills/tree/master/lastfm-weekly-roast) 🤖🎸🥁😱
 
 ## Overview
 
@@ -24,26 +24,20 @@ This skill loads the **10 most played albums** from a Last.fm user's library
 ## How It Works
 
 ### Step 1 — Fetch the data
+Run the helper script `fetch_top_albums.py` to call the Last.fm API. The script is cross-platform (Windows, Linux, macOS) and automatically reads `LASTFM_API_KEY` and `LASTFM_USERNAME` from the system environment or the user's `~/.env` file:
 
-Run the helper script to call the Last.fm API. The script will automatically read the `LASTFM_API_KEY` from the user's `.env` file at `C:\Users\andy\.env`.
-The script writes the raw API response directly as UTF-8 to avoid re-encoding issues (PowerShell's `>` redirect and `ConvertTo-Json` both mangle non-ASCII characters like Cyrillic). Always use `-OutFile` and parse with Python (`utf-8-sig` handles the BOM):
+```bash
+# Fetch and print the top 10 albums directly (default 7 days, uses ~/.env username)
+python scripts/fetch_top_albums.py
 
-```powershell
-# Step 1a — Fetch and write raw UTF-8 JSON (avoids re-encoding mangling)
-pwsh -File "C:\Users\andy\.gemini\config\skills\lastfm-weekly-roast\scripts\fetch_top_albums.ps1" -Username "demoded" -OutFile "C:\Temp\lastfm_out.json"
-
-# Step 1b — Parse with Python and write to a UTF-8 text file
-#           (print() to Windows console fails on Cyrillic; write to file instead)
-python -c "import json,sys; f=open(r'C:\Temp\lastfm_out.json',encoding='utf-8-sig'); data=json.load(f); out=open(r'C:\Temp\lastfm_albums.txt','w',encoding='utf-8'); [out.write(a['name']+' | '+a['artist']['name']+' | '+a['playcount']+'\n') for a in data['topalbums']['album'][:10]]; print('OK')"
-
-# Step 1c — Read the result (the agent reads this file directly)
-Get-Content C:\Temp\lastfm_albums.txt -Encoding UTF8
+# Or specify custom username, period, or limit:
+python scripts/fetch_top_albums.py --username <username> --period 7day --limit 10
 ```
 
 > [!IMPORTANT]
-> - If the script fails because the `.env` file or `LASTFM_API_KEY` is missing, ask the user to provide their Last.fm API key and save it to `C:\Users\andy\.env` before trying again.
-> - If the user specifies a **different username**, pass it via `-Username`.
-> - Map time periods with `-Period`:
+> - If the script fails because `LASTFM_API_KEY` or `LASTFM_USERNAME` is missing, save them to `~/.env` (e.g., `LASTFM_API_KEY=...` and `LASTFM_USERNAME=...`) or pass them via CLI flags.
+> - If the user specifies a **different username**, pass it via `--username` (`-u`).
+> - Map time periods with `--period` (`-p`):
 >   - `LAST_7_DAYS` → `7day` (default)
 >   - `LAST_30_DAYS` → `1month`
 >   - `LAST_90_DAYS` → `3month`
@@ -51,32 +45,14 @@ Get-Content C:\Temp\lastfm_albums.txt -Encoding UTF8
 >   - `LAST_365_DAYS` → `12month`
 >   - `ALL_TIME` → `overall`
 
-### Step 2 — Parse the response
+### Step 2 — Parse the data
 
-The JSON response has this structure:
-
-```json
-{
-  "topalbums": {
-    "album": [
-      {
-        "name": "Album Name",
-        "playcount": "42",
-        "artist": {
-          "name": "Artist Name"
-        },
-        "image": [ ... ]
-      },
-      ...
-    ]
-  }
-}
+The script outputs each album in clean text lines formatted as:
+```text
+<Album Name> | <Artist Name> | <Playcount>
 ```
 
-Extract from each album entry:
-- `name` — album title
-- `artist.name` — artist name
-- `playcount` — number of plays in the period
+(If raw JSON is needed for advanced inspection, pass `--json` to output full Last.fm API JSON, or `--raw-json <file>` to dump it to disk.)
 
 ### Step 3 — Write the reviews
 
